@@ -10,7 +10,7 @@ on:
       version:
         description: 'WebP Version Tag'     
         required: true
-        default: 'v1.2.0'
+        default: 'v1.3.0'
 
 jobs:
   build:
@@ -22,14 +22,6 @@ jobs:
       - name: Check out WebP-Cococa
         uses: actions/checkout@v2
       
-      # Configure git credentials
-      - name: Configure git credentials
-        uses: fregante/setup-git-token@v1
-        with:
-          name: XD-CI
-          email: ${{ secrets.CI_EMAIL }}
-          token: ${{ secrets.API_TOKEN }}
-
       # Install the GNU tools to build from the command line
       - name: Install CL Tools
         run: brew install autoconf automake libtool
